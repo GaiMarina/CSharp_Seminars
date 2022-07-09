@@ -45,7 +45,7 @@ while(current <= num)
 // Сделать проверку на ерунду.
 
 */
-
+/*
 // Задача 3: Получить из длинного числа трехзначное.
 
 int a = 1325241325;
@@ -56,4 +56,33 @@ while(a > 999)
 }
 
 Console.WriteLine(a + " ");
+*/
+
+//Задача 4: Программа выдает название дня недели по заданному номеру.
+
+Console.Write("Input positive integer number from 1 to 7: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+if(num == 1)
+    Console.WriteLine("Monday" + " ");
+if(num == 2)
+    Console.WriteLine("Tuesday" + " ");
+if(num == 3)
+    Console.WriteLine("Wednesday" + " ");
+if(num == 4)
+    Console.WriteLine("Friday" + " ");
+if(num == 5)
+    Console.WriteLine("Friday" + " ");
+if(num == 6)
+    Console.WriteLine("Saturday" + " ");
+if(num == 7)
+    Console.WriteLine("Sunday" + " ");
+
+
+
+
+
+
+
+
 
