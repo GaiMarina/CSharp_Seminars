@@ -57,7 +57,7 @@ while(a > 999)
 
 Console.WriteLine(a + " ");
 */
-
+/*
 //Задача 4: Программа выдает название дня недели по заданному номеру.
 
 Console.Write("Input positive integer number from 1 to 7: ");
@@ -77,12 +77,16 @@ if(num == 6)
     Console.WriteLine("Saturday" + " ");
 if(num == 7)
     Console.WriteLine("Sunday" + " ");
+*/
+/*
+// Задача 5: Программа на вход принимает число и выдает его квадрат
 
+int num1, quad;
 
+Console.Write("Input first integer number: ");
+num1 = Convert.ToInt32(Console.ReadLine());  
 
+quad = num1 * num1;
 
-
-
-
-
-
+Console.WriteLine(quad);
+*/
