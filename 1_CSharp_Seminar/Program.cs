@@ -27,3 +27,18 @@ if(num1 == num2 * num2)   //скобки убрали, т.к. одно дейс�
 else 
     result = "No";
     Console.WriteLine(result);*/
+
+// Задача 2. Программа на вход принимает одно число (N), а на выходе показывает все целые числа в 
+// промежутке от -N до N.
+
+Console.Write("Input positive integer number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int current = num * (-1);
+
+while(current <= num)
+{
+    Console.Write(current + " ");
+    current++; //  то же самое, что и current + 1
+}
+// Сделать проверку на ерунду.
