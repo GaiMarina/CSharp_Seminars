@@ -16,7 +16,7 @@ else
 //===================================
 /*
 // 1. Задача через переменную string result. Верхний вариант более оптимизирован/быстрый.
- int num1, num2; 
+int num1, num2; 
 string result;
 Console.Write("Input first integer number: ");
 num1 = Convert.ToInt32(Console.ReadLine());  //переводим число из "23" в 23
@@ -36,7 +36,7 @@ else
 Console.Write("Input positive integer number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int current = num * (-1);
+int current = num * (-1); // "*" и "-" рядом ставить нельзя => скобки.
 
 while(current <= num)
 {
@@ -73,7 +73,7 @@ if(num == 2)
 if(num == 3)
     Console.WriteLine("Wednesday" + " ");
 if(num == 4)
-    Console.WriteLine("Friday" + " ");
+    Console.WriteLine("Thursday" + " ");
 if(num == 5)
     Console.WriteLine("Friday" + " ");
 if(num == 6)
