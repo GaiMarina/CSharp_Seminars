@@ -42,7 +42,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int result = SumOfNum(number);
 
-Console.WriteLine($"Sum of digits from 1 to {number} is {result}");
+Console.WriteLine($"Sum of numbers from 1 to {number} is {result}");
 */
 //===============================
 /*
@@ -51,6 +51,7 @@ Console.WriteLine($"Sum of digits from 1 to {number} is {result}");
 long MultiplationOfNum(int num)
 {
     long result = 1;
+    
     for (int i = 3; i <= num; i += 3) 
     {
         result *= i;
