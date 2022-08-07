@@ -148,21 +148,24 @@ int[] ProductOfPairs(int[] array)
     int i = 0;
     int j = array.Length-1;
 
-    while (i < array.Length / 2 || j > array.Length / 2)
+    int[] FinalArray = new int[(array.Length + 1) / 2];
+    int size = FinalArray.Length;
+
+    while (i < size || j > size)
     {
-        Console.Write(array[i] * array[j] + " ");
+        FinalArray[i] = array[i] * array[j];
         i++;
         j--;
     }
      
     if(array.Length % 2 == 1)
-        Console.Write(array[array.Length / 2] + " ");
-
-    Console.WriteLine();
-
-    return array;
+    {
+        FinalArray[size - 1] = array[array.Length / 2];
+    }
+    
+    return FinalArray;
 }
-/*
+
 Console.Write("Input the size of array: ");
 int size = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the min value of an element: ");
@@ -173,9 +176,10 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[] NewArray = CreateRandomArray(size, min, max);
 ShowArray(NewArray);
 int[] FinalArray = ProductOfPairs(NewArray);
-*/
-//=============================================
+ShowArray(FinalArray);
 
+//=============================================
+/*
 // другой метод 6-й задачи.
 
 int[] ProductOfPairs2(int[] array)
@@ -216,3 +220,4 @@ int[] NewArray = CreateRandomArray(size, min, max);
 ShowArray(NewArray);
 int[] FinalArray = ProductOfPairs2(NewArray);
 ShowArray(FinalArray);
+*/
