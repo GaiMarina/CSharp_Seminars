@@ -197,12 +197,12 @@ int[] ProductOfPairs2(int[] array)
         int[] FinalArray = new int[size + 1];
         for(int i = 0; i < FinalArray.Length - 1; i++)
         {
-            FinalArray[i] = FinalArray[i] = array[i] * array[array.Length - 1 - i];
+            FinalArray[i] = array[i] * array[array.Length - 1 - i];
         }
-        FinalArray[FinalArray.Length - 1] = array[FinalArray.Length - 1];
+        FinalArray[FinalArray.Length - 1] = array[size];
         return FinalArray; 
     }
-       
+      
 }
 
 Console.Write("Input the size of array: ");
