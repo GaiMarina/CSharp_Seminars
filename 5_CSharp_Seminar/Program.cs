@@ -130,7 +130,7 @@ int CountTheQuantity(int[] array)
 
     return count;
 }
-
+/*
 int[] NewArray = CreateRandomArray(12,-55, 10);
 
 //int[] NewArray = CreateArrayOfSize(12);
@@ -138,6 +138,38 @@ int[] NewArray = CreateRandomArray(12,-55, 10);
 ShowArray(NewArray);
 
 Console.WriteLine($"The number of array elements from the segment [10,99] is {CountTheQuantity(NewArray)}");
+*/
+//===============================
 
 // 6. Найти произведение пар чисел в одномерном массиве. Парой считается первый и последний элемент, второй и предпоследний и т.д. Результат записать в новом массиве.
 
+int[] ProductOfPairs(int[] array)
+{   
+    int i = 0;
+    int j = array.Length-1;
+
+    while (i < array.Length / 2 || j > array.Length / 2)
+    {
+        Console.Write(array[i] * array[j] + " ");
+        i++;
+        j--;
+    }
+     
+    if(array.Length % 2 == 1)
+        Console.Write(array[array.Length / 2] + " ");
+
+    Console.WriteLine();
+
+    return array;
+}
+
+Console.Write("Input the size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the min value of an element: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the max value of an element: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] NewArray = CreateRandomArray(size, min, max);
+ShowArray(NewArray);
+int[] FinalArray = ProductOfPairs(NewArray);
