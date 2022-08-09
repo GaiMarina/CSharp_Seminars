@@ -50,7 +50,7 @@ bool Triangle(int a, int b, int c)
 
 */
 //===================================
-
+/*
 // Програма, которая будет преобразовывать десятичное число в двоичное. 
 
  string Transformation(int number)
@@ -69,17 +69,17 @@ bool Triangle(int a, int b, int c)
 
 string res = Transformation(10);
 Console.WriteLine(res);
-
+*/
 //===================================
-/*
+
 // Не используя рекурсию, ввести первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1. 
 
 int[] Fibonacci(int N)
 {
     int[] newFibonacci = new int[N];
 
-    newFibonacci[0] = a;
-    newFibonacci[1] = b;
+    newFibonacci[0] = 0;
+    newFibonacci[1] = 1;
 
     for(int i = 2; i < N; i++)
     {
@@ -89,10 +89,9 @@ int[] Fibonacci(int N)
     return newFibonacci;
 }
 
-Console.WriteLine("Input the quantity of numbers N ");
+Console.Write("Input the quantity of numbers N ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int[] NewFibonacci = Fibonacci(num);
 
 ShowArray(NewFibonacci);
-*/
