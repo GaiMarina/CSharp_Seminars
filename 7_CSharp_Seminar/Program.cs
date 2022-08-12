@@ -1,6 +1,6 @@
 ﻿
 //1. Задать двумерный массив размером m×n, заполненный случайными целыми числами. 
-
+/*
 int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue) //Запятая показывает количество
 {
     int[,] newArray = new int[rows,columns];
@@ -15,7 +15,7 @@ int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue) //
     
     return newArray;
 }
-
+*/
  //Вывод на экран
 
  void Show2dArray(int[,] array)
@@ -31,7 +31,7 @@ int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue) //
  }
 
  //=======================================
-/*
+
  // 2. Задать двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aij = i+j. 
  // Вывести полученный массив на экран. 
 
@@ -59,7 +59,7 @@ int col = Convert.ToInt32(Console.ReadLine());
 int[,] ArrayCreated = ChangeArrayAsFormula(r, col);
 
 Show2dArray(ArrayCreated);
-*/
+
 //========================================
 /*
  // Задать двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты. 
