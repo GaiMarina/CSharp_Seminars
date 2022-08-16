@@ -60,7 +60,7 @@ Console.WriteLine();
 Show2dArray(SwapLines(array));
 */
 //====================================
-
+/*
 // 2. Задать двумерный массив. Написать программу, которая заменяет строки на столбцы. 
 //    В случае, если это невозможно, программа должна вывести сообщение для пользователя. 
 //    (Cередина 2d массива - относительно гл.диагонали)
@@ -128,48 +128,70 @@ if(array.GetLength(0) != array.GetLength(1))
     Console.WriteLine("The array is not square.");
 else
     Show2dArray(ReplaceRowsColumns(array));
-
-
-
+*/
 //==========================
-/*
+
 // 3. Из двумерного массива целых чисел удалить строку и столбец, 
 //    на пересечении которых расположен наименьший элемент. 
+
+int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows,columns];
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            newArray[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    
+    return newArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++) 
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
 
 int[,] CutArray(int[,] array)
 {
     int iMin = 0, jMin = 0;
+
     int[,] newArray = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
 
     for(int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            newArray[i,j] = new Random().Next(minValue, maxValue + 1);
-
             if(array[i,j] < array[iMin,jMin])
             {
                 iMin = i; 
                 jMin = j;
-            }
-                
+            }              
         }
     }
 
-    for(int i = 0, m = 0; i < array.GetLength(0); i++, m++)
+    for (int i = 0, m = 0; i < array.GetLength(0); i++, m++)
     {
-        if(i == iMin && i != array.GetLength(0) - 1) i++;
+        if(i == iMin) i++;
+        
+        for(int j = 0, n = 0; j< array.GetLength(1); j++, n++)
         {
-            i--;
-            continue;
-        }
-
-        for(int j = 0, n = 0; j < newArray.GetLength(1); j++, n++)
-        {
-            if(j ==jMin) j++;
-            newArray[m,n] = array[i,j];
-        }
+            if(j == jMin) j++;
+            if(i < array.GetLength(0) && j < array.GetLength(1))
+                newArray[m,n] = array[i,j];
+            
+        }        
     }
+    
     return newArray;
 }
 
@@ -187,9 +209,10 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int[,] array = CreateRandom2dArray(m, n, min, max);
 Show2dArray(array);
+Console.WriteLine();
 Show2dArray(CutArray(array));
 
 
 //if(array[i,j == 5]) continue; //завершает повторение, переходит сразу в j++
 //array[i,j] = 0;
-*/
+//break - завершает цикл.
