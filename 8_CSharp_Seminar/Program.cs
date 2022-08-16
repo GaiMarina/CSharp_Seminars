@@ -191,8 +191,35 @@ int[,] CutArray(int[,] array)
             
         }        
     }
-    
+
     return newArray;
+}
+
+void CutArray2(int[,] array)
+{
+  int iMin = 0, jMin = 0;
+
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(array[i,j] < array[iMin,jMin])
+            {
+                iMin = i; 
+                jMin = j;
+            }                      
+        }
+    }  
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i != iMin && j != jMin)
+            Console.Write(array[i,j] + " ");
+        }
+            if(i != iMin)
+            Console.WriteLine();
+    }
 }
 
 Console.Write("Input the number of rows ");
@@ -210,8 +237,8 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[,] array = CreateRandom2dArray(m, n, min, max);
 Show2dArray(array);
 Console.WriteLine();
-Show2dArray(CutArray(array));
-
+//Show2dArray(CutArray(array));
+CutArray2(array);
 
 //if(array[i,j == 5]) continue; //завершает повторение, переходит сразу в j++
 //array[i,j] = 0;
