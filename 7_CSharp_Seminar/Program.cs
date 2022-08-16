@@ -50,10 +50,10 @@ int[,] ChangeArrayAsFormula(int rows, int columns) //Запятая показы
     return newArray;
 }
 
-Console.Write("Input the quantity of rows ");
+Console.Write("Input the number of rows ");
 int r = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Input the quantity of columns ");
+Console.Write("Input the number of columns ");
 int col = Convert.ToInt32(Console.ReadLine());
 
 int[,] ArrayCreated = ChangeArrayAsFormula(r, col);
@@ -96,7 +96,7 @@ int[,] ArrayCreated = ChangeEvenIndices(newArray);
 Show2dArray(ArrayCreated);
 */
 //=========================================
-
+/*
 //Задать двумерный массив. 
 //Найти сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д. 
 
@@ -122,9 +122,8 @@ int SumForMainDiagonal(int[,] array)
     int sum = 0;
 
     for(int i = 0; i < array.GetLength(0) && i < array.GetLength(1); i++) //Длина по умолчанию с 0.
-    {   
         sum += array[i,i];
-    }
+   
 
     return sum;
  }
@@ -145,5 +144,6 @@ int[,] newArray = CreateRandom2dArray(r, col, min, max);
 Show2dArray(newArray);
 Console.WriteLine();
 
-int FinalSum = SumForMainDiagonal(newArray);
+int FinalSum = SumForMainDiagonal2(newArray);
 Console.WriteLine(FinalSum);
+*/
