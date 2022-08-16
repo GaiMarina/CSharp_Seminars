@@ -1,4 +1,5 @@
 ﻿
+/*
 // 1. Задать двумерный массив. Написать программу, которая поменяет местами первую и 
 //    последнюю строку массива. 
 
@@ -37,6 +38,7 @@ int[,] SwapLines(int[,] array)
         array[0,j] = array[array.GetLength(0) - 1, j];
         array[array.GetLength(0) - 1, j] = temp;
     }
+
     return array;
 }
 
@@ -56,12 +58,12 @@ int[,] array = CreateRandom2dArray(m, n, min, max);
 Show2dArray(array);
 Console.WriteLine();
 Show2dArray(SwapLines(array));
-
+*/
 //====================================
-/*
+
 // 2. Задать двумерный массив. Написать программу, которая заменяет строки на столбцы. 
 //    В случае, если это невозможно, программа должна вывести сообщение для пользователя. 
-// середина 2d массива - относительно гл.диагонали.
+//    (Cередина 2d массива - относительно гл.диагонали)
 
 int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
 {
@@ -92,19 +94,17 @@ void Show2dArray(int[,] array)
 
 int [,] ReplaceRowsColumns(int[,] array)
 {
-
-int[,] newArray = new int[array.GetLength(0), array.GetLength(1)];
-
+    int[,] newArray = new int[array.GetLength(0), array.GetLength(1)];
+    
+    for(int i = 0; i < array.GetLength(0); i++)
     {
-        for(int i = 0; i < array.GetLength(0); i++)
+        for(int j = 0; j < array.GetLength(1); j++)
         {
-            for(int j = 0; j < array.GetLength(1); j++)
-            {
-                array[j,i] = array[i,j];
-            }
+            newArray[i,j] = array[j,i];
         }
-        return newArray;
     }
+
+    return newArray;
 }
 
 Console.Write("Input the number of rows ");
@@ -121,10 +121,16 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int[,] array = CreateRandom2dArray(m, n, min, max);
 Show2dArray(array);
+
+Console.WriteLine();
+
 if(array.GetLength(0) != array.GetLength(1))
-    Console.WriteLine("not square array");
-Show2dArray(ReplaceRowsColumns(array));
-*/
+    Console.WriteLine("The array is not square.");
+else
+    Show2dArray(ReplaceRowsColumns(array));
+
+
+
 //==========================
 /*
 // 3. Из двумерного массива целых чисел удалить строку и столбец, 
