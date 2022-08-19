@@ -183,12 +183,11 @@ int[,] CutArray(int[,] array)
     {
         if(i == iMin) i++;
         
-        for(int j = 0, n = 0; j< array.GetLength(1); j++, n++)
+        for(int j = 0, n = 0; j < array.GetLength(1); j++, n++)
         {
             if(j == jMin) j++;
             if(i < array.GetLength(0) && j < array.GetLength(1))
-                newArray[m,n] = array[i,j];
-            
+                newArray[m,n] = array[i,j];            
         }        
     }
 
@@ -237,8 +236,8 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[,] array = CreateRandom2dArray(m, n, min, max);
 Show2dArray(array);
 Console.WriteLine();
-//Show2dArray(CutArray(array));
-CutArray2(array);
+Show2dArray(CutArray(array));
+//CutArray2(array);
 
 //if(array[i,j == 5]) continue; //завершает повторение, переходит сразу в j++
 //array[i,j] = 0;
